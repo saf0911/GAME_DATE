@@ -24,7 +24,7 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _jsxFileName = '/Users/scottsfolder/Documents/aca3/advanced-nextjs-express-starter/src/pages/adduser.js?entry';
+var _jsxFileName = '/Users/scottsfolder/Documents/aca3/GAME_DATE/src/pages/adduser.js?entry';
 // import Link from 'next/link';
 
 var _react = require('react');
