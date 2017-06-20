@@ -1,11 +1,12 @@
 import {combineReducers} from 'redux';
+import { reducer as formReducer } from 'redux-form'
 
 function users(state = [], action) {
   if (action.type === 'USERS_LOADED') {
     return action.value;
   }
   return state;
-}
+} 
 
 function user(state = {}, action) {
   if (action.type === 'GET_USER_DONE') {
@@ -17,6 +18,7 @@ function user(state = {}, action) {
 
 const rootReducer = combineReducers({
   users,
-  user
+  user,
+  form: formReducer
 });
 export default rootReducer;

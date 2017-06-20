@@ -8,6 +8,8 @@ import {
   loadUsers,
 } from '../actions';
 import PropTypes from 'prop-types';
+import { Field, reduxForm } from 'redux-form';
+
 
 const FORM_VALUES = {
   firstName: '',
