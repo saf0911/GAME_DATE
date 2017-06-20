@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 var _jsxFileName = '/Users/scottsfolder/Documents/aca3/GAME_DATE/src/components/Header.js';
 
+var _style = require('styled-jsx/style.js');
+
+var _style2 = _interopRequireDefault(_style);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -19,6 +23,7 @@ function _interopRequireDefault(obj) {
 
 function Header() {
   return _react2.default.createElement('div', {
+    'data-jsx': 164374155,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
@@ -28,6 +33,7 @@ function Header() {
       lineNumber: 7
     }
   }, _react2.default.createElement('a', {
+    'data-jsx': 164374155,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -37,6 +43,7 @@ function Header() {
       lineNumber: 10
     }
   }, _react2.default.createElement('a', {
+    'data-jsx': 164374155,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
@@ -46,6 +53,7 @@ function Header() {
       lineNumber: 13
     }
   }, _react2.default.createElement('a', {
+    'data-jsx': 164374155,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
@@ -55,20 +63,25 @@ function Header() {
       lineNumber: 16
     }
   }, _react2.default.createElement('a', {
+    'data-jsx': 164374155,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     }
-  }, 'Sign Out')), _react2.default.createElement(_link2.default, { href: '/logout', __source: {
+  }, 'Sign Out')), _react2.default.createElement(_link2.default, { href: '/adduser', __source: {
       fileName: _jsxFileName,
       lineNumber: 19
     }
   }, _react2.default.createElement('a', {
+    'data-jsx': 164374155,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20
     }
-  }, 'Log Out')));
+  }, 'Add a User')), _react2.default.createElement(_style2.default, {
+    styleId: 164374155,
+    css: 'a[data-jsx="164374155"]{color:red;margin:10px;font-size:20px}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvY29tcG9uZW50cy9IZWFkZXIuanMiLCJzb3VyY2VSb290IjoiL1VzZXJzL3Njb3R0c2ZvbGRlci9Eb2N1bWVudHMvYWNhMy9HQU1FX0RBVEUiLCJzb3VyY2VzQ29udGVudCI6W119 */\n/*@ sourceURL=src/components/Header.js */'
+  }));
 }
 
 exports.default = Header;

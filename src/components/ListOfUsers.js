@@ -1,39 +1,72 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+// import Link from 'next/Link';
+import {loadUsers, deleteUser} from '../actions';
+import withRedux from 'next-redux-wrapper';
+import {initStore} from '../store';
 
-function ListOfUsers(props) {
-  return (
-    <div>
-      {props.users.map((user, key) => {
-        return (
-          <div key={key} >
-            <ul>
-              <li> {user.firstName} </li>
-              <li> {user.lastName} </li>
-              <li> {user.username} </li>
+
+class ListOfUsers extends Component {
+  componentDidMount() {
+    this.props.loadUsers();
+  }
+
+  render() {
+    return (
+      <div>
+        {this.props.users.map((user, key) => {
+          return (
+            <div key={key} >
+              <ul>
+                <li> {user.username} </li>
+                <li> {user.avatar} </li>
+                <li> {user.interests} </li>
+              </ul>
               <a href={`/details?id=${user._id}`} >View User</a>
-              <button onClick={() => props.onUserDelete(user._id)} >Delete User</button>
-            </ul>
+              <button onClick=
+                {() => this.props.deleteUser(`${user._id}`)} >
+                Delete User
+              </button>
 
-          </div>
 
-        );
-      })}
-    </div>
-  );
+            </div>
+
+          );
+        })}
+      </div>
+    );
+  }
 }
+
 
 ListOfUsers.propTypes = {
   users: PropTypes.array.isRequired,
-  userSelect: PropTypes.func.isRequired,
-  onUserDelete: PropTypes.func,
-
+  userSelect: PropTypes.func,
+  deleteUser: PropTypes.func,
+  loadUsers: PropTypes.func,
 };
 
-// Tells what the function takes for easier reading
-ListOfUsers.defaultProps = {
-  // eslint-disable-next-line
-  onUserDelete: (userid) => {}
-};
 
-export default ListOfUsers;
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    loadUsers: () => {
+      dispatch(loadUsers());
+    },
+    deleteUser: id => {
+      dispatch(deleteUser(id));
+    }
+  };
+}
+
+function mapStateToProps(state) {
+  return {
+    users: state.users,
+    user: state.user
+  };
+}
+
+
+
+export default withRedux(initStore, mapStateToProps, mapDispatchToProps)(ListOfUsers);

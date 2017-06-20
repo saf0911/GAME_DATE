@@ -16,7 +16,18 @@ function users() {
   return state;
 }
 
+function user() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments[1];
+
+  if (action.type === 'GET_USER_DONE') {
+    return action.value;
+  }
+  return state;
+}
+
 var rootReducer = (0, _redux.combineReducers)({
-  users: users
+  users: users,
+  user: user
 });
 exports.default = rootReducer;
