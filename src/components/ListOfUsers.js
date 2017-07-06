@@ -18,9 +18,9 @@ class ListOfUsers extends Component {
           return (
             <div key={key} >
               <ul>
-                <li> {user.username} </li>
-                <li> {user.avatar} </li>
-                <li> {user.interests} </li>
+                <li> {user.firstName} </li>
+                <li> {user.lastName} </li>
+                <li> {user.birthdate} </li>
               </ul>
               <a href={`/details?id=${user._id}`} >View User</a>
               <button onClick=

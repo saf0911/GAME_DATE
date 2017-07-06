@@ -8,15 +8,17 @@ import {
   loadUsers,
 } from '../actions';
 import PropTypes from 'prop-types';
-import { Field, reduxForm } from 'redux-form';
+
 
 
 const FORM_VALUES = {
   firstName: '',
   lastName: '',
-  avatar: '',
-  interests: '',
-  username: '',
+  birthdate: '',
+  address: '',
+  State: '',
+  Zip: '',
+  asthma: '',
 };
 
 class AddUserPage extends Component {
@@ -52,6 +54,7 @@ class AddUserPage extends Component {
         </h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
 
+
           First name:<br />
             <input
               type='text'
@@ -61,6 +64,7 @@ class AddUserPage extends Component {
               onChange={this.handleInputChange.bind(this)}
             />
             <br />
+
           Last name:<br />
             <input
               type='text'
@@ -70,33 +74,72 @@ class AddUserPage extends Component {
               onChange={this.handleInputChange.bind(this)}
              />
             <br />
-          Avatar: <br />
+
+          Birthdate: <br />
             <input
-              type="text"
-              name="avatar"
-              placeholder="Add Avatar"
-              value={this.state.avatar}
+              type="number, String"
+              name="birthdate"
+              placeholder="mm/dd/yyyy"
+              value={this.state.birthdate}
               onChange={this.handleInputChange.bind(this)}
             />
             <br />
-          Interests: <br />
+
+          Address: <br />
             <input
               type='text'
-              name='interests'
-              placeholder='Add Interests'
-              value={this.state.interests}
+              name='address'
+              placeholder='Add Address'
+              value={this.state.address}
               onChange={this.handleInputChange.bind(this)}
             />
             <br />
-            User Name:<br />
-              <input
-                type='text'
-                name='username'
-                placeholder='Add Last name'
-                value={this.state.username}
-                onChange={this.handleInputChange.bind(this)}
-               />
-            <br /><br />
+          City: <br />
+            <input
+            type='text'
+            name='city'
+            placeholder='City'
+            value={this.state.city}
+            onChange={this.handleInputChange.bind(this)}
+            />
+            <br />
+          State:<br />
+            <input
+              type='text'
+              name='username'
+              placeholder='State'
+              value={this.state.State}
+              onChange={this.handleInputChange.bind(this)}
+             />
+             <br />
+
+             Zip:<br />
+               <input
+                 type='text'
+                 name='username'
+                 placeholder='Zip'
+                 value={this.state.zip}
+                 onChange={this.handleInputChange.bind(this)}
+                />
+                <br /><br />
+
+            Asthma:<br />
+              <select>
+                <option value={this.state.asthma}>Yes</option>
+                <option value={this.state.asthma}>No</option>
+                </select>
+
+              Explain
+                <input
+                  type='text'
+                  name='asthma'
+                  placeholder='Asthma'
+                  value={this.state.asthma}
+                  onChange={this.handleInputChange.bind(this)}
+                   />
+
+
+              <br /> <br/>
           <input type="submit" value="Submit" />
 
         </form>

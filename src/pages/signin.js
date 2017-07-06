@@ -4,7 +4,6 @@ import {initStore} from '../store';
 import withRedux from 'next-redux-wrapper';
 
 
-
 function SignIn() {
   return (
     <div>
